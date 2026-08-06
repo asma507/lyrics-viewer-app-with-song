@@ -20,31 +20,42 @@ class ProfileScreen extends StatelessWidget {
           children: [
             ListTile(
               leading: const Icon(Icons.person, size: 40),
-              title: Text(userProvider.username ?? 'Guest'),
-              subtitle: Text(userProvider.phone ?? ''),
+              title: Text(
+                userProvider.name.isNotEmpty ? userProvider.name : 'Guest',
+              ),
+              subtitle: Text(userProvider.email),
             ),
+
             const Divider(height: 32),
 
             const Spacer(),
 
-            // Logout button
+            // Logout Button
             ElevatedButton(
               onPressed: () {
                 userProvider.logout();
+
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (_) => const LoginScreen()),
+                  MaterialPageRoute(
+                    builder: (_) => const LoginScreen(),
+                  ),
                   (route) => false,
                 );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 16,
+                ),
               ),
               child: const Text(
                 'Logout',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],
