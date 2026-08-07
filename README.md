@@ -78,12 +78,10 @@ The assets folder contains the resources used by the application, such as audio 
 🧪 Testing
 
 To run the tests, use:
-
 flutter test
+
 📦 Build APK
-
 To create an Android APK:
-
 flutter build apk
 
 The generated APK can be found in:
@@ -102,7 +100,5 @@ Improve lyrics synchronization
 This project was developed to learn and practice Flutter and Dart by creating a mobile application with audio playback and lyrics viewing functionality.
 
 👩‍💻 Developer
-
 Asma
-
 Developed using Flutter & Dart.
